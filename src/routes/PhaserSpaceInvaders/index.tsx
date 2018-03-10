@@ -23,6 +23,7 @@ class PhaserSpaceInvaders extends React.Component {
        scene: [SpriteDemo]
     };
     this.game = new Phaser.Game(config)
+    console.log("PhaserSpaceInvaders", "componentDidMount", this.game)
   }
   render() {
     return (
