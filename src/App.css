@@ -1,0 +1,11 @@
+.App-container {
+  /*display: -webkit-flex;*/
+  /*display: -ms-flexbox;*/
+  /*display: flex;*/
+  /*flex: 1;*/
+  /*padding: 15px;*/
+  /*flex-direction: column;*/
+  /* overflow-y: auto; */
+  background-color: orange;
+}
+
