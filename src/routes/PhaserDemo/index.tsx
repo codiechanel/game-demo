@@ -1,4 +1,6 @@
+///<reference path="../../types/phaser.d.ts"/>
 import * as React from "react";
+
 // import { Game } from "phaser";
 import Scene1 from './Scene1'
 import SpriteDemo from './SpriteDemo'
@@ -21,16 +23,13 @@ class PhaserDemo extends React.Component<any, any> {
       physics:    { default: "matter",
       // arcade: { gravity: { y: 200 } }
     },
-    // scene: [Scene1]
-    scene: [SpriteDemo]
+    scene: [Scene1]
+    // scene: [SpriteDemo]
   };
 
     // this.game = new Phaser.Game(800, 600, Phaser.AUTO, "content");
 
     this.game = new Game(config)
-    console.log("PhaserDemo", "componentDidMount", this.game)
-
-
   }
   render() {
     return (

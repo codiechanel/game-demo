@@ -1,7 +1,4 @@
 ///<reference path="../../types/phaser.d.ts"/>
-// import * as Phaser from 'phaser'
-// import Scene = Phaser.Scene;
-// import Scene   = Scene;
 
 class SpriteDemo extends Phaser.Scene {
   /**
@@ -10,33 +7,17 @@ class SpriteDemo extends Phaser.Scene {
    */
   [x: string]: any;
 
-  // private cursors: any;
   preload() {
-    this.load.atlas("ninjas", "assets/ninja.png", "assets/ninja.json");
+    this.load.image("ship", "assets/playerShip1_blue.png");
   }
   create() {
     this.cursors = this.input.keyboard.addKeys({
       leftKey: Phaser.Input.Keyboard.KeyCodes.LEFT,
       rightKey: Phaser.Input.Keyboard.KeyCodes.RIGHT
     });
-
-    let capguy: any = this.add
-      .sprite(0, 0, "ninjas", "Run__000.png")
-      .setOrigin(0, 0);
-    const frameNames = this.anims.generateFrameNames("ninjas", {
-      start: 1,
-      end: 9,
-      zeroPad: 3,
-      prefix: "Run__",
-      suffix: ".png"
-    });
-    this.anims.create({
-      key: "running",
-      frames: frameNames,
-      frameRate: 16,
-      repeat: -1
-    });
-    capguy.anims.play("running");
+    const ship: any = this.add.image(0, 0, "ship").setOrigin(0,0)
+    // ship.setVelocity(50, 50);
+    // ship.setCollideWorldBounds(true);
   }
   update(timestep, delta) {
     const { leftKey, rightKey } = this.cursors;

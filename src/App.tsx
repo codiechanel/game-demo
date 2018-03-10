@@ -31,6 +31,7 @@ import MatterCanvas from "./routes/Matter/MatterCanvas";
 import SpriteDemo from "./routes/SpriteDemo";
 import PhaserDemo from "./routes/PhaserDemo";
 import PhaserDemo2 from "./routes/PhaserDemo2";
+import PhaserSpaceInvaders from "./routes/PhaserSpaceInvaders";
 class App extends React.Component {
   render() {
     return (
@@ -49,7 +50,7 @@ class App extends React.Component {
         <div className="App-container">
           {/*<div id="stage-parent" >*/}
           <Switch>
-            <Route exact path="/" render={props => <PhaserDemo2 {...props} />} />
+            <Route exact path="/" render={props => <PhaserSpaceInvaders {...props} />} />
             <Route exact path="/demo" render={props => <Demo {...props} />} />
             <Route render={props => <Home {...props} />} />
           </Switch>
