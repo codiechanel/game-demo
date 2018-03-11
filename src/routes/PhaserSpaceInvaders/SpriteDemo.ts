@@ -10,11 +10,14 @@ class SpriteDemo extends Phaser.Scene {
   private ship: Ship;
   private cursors: any;
   private enemy: Enemy;
-  enemyDestroyed = false
+  enemyDestroyed = false;
   private height: number;
   private width: number;
-  lasers = []
+  lasers = [];
   private laser: Laser;
+  private fireSound: ISound;
+  private hitSound: ISound;
+  private starfield: Phaser.GameObjects.TileSprite;
   // private matter: any;
   /**
    * index signature
@@ -24,15 +27,25 @@ class SpriteDemo extends Phaser.Scene {
   // [cursors: string]: any;
 
   preload() {
+
+    this.load.audio("hit", "assets/sfx_zap.ogg");
+    this.load.audio("fire", "assets/sfx_laser1.ogg");
     this.load.atlas("playerShip", "assets/ship.png", "assets/ship.json");
 
+    this.load.image("starfield", "assets/blue.png");
     this.load.image("laser", "assets/laserBlue02.png");
     this.load.image("enemy", "assets/enemyBlue1.png");
     this.load.image("ship", "assets/playerShip1_blue.png");
   }
   create() {
-    this.height = this.sys.canvas.height
-    this.width = this.sys.canvas.width
+    // setting Matter world bounds
+    // this.matter.world.setBounds(0, -200, game.config.width, game.config.height + 200);
+    this.starfield = this.add.tileSprite(0, 0, 800, 400, 'starfield')
+    this.starfield.setOrigin(0,0)
+    this.fireSound = this.sound.add('fire');
+    this.hitSound = this.sound.add('hit');
+    this.height = this.sys.canvas.height;
+    this.width = this.sys.canvas.width;
     this.cursors = this.input.keyboard.addKeys({
       leftKey: Phaser.Input.Keyboard.KeyCodes.LEFT,
       rightKey: Phaser.Input.Keyboard.KeyCodes.RIGHT,
@@ -41,18 +54,13 @@ class SpriteDemo extends Phaser.Scene {
     });
     this.time.addEvent({
       delay: 500,
-      callback: function ()
-      {
-
-
+      callback: function() {
         if (this.enemyDestroyed) {
-          let x = Math.round(Math.random() * 8 * 50)
+          let x = Math.round(Math.random() * 8 * 50);
           // console.log("callback", "callback", x)
 
-          this.enemy = new Enemy(this, x,0)
-          this.enemyDestroyed = false
-
-
+          this.enemy = new Enemy(this, x, 0);
+          this.enemyDestroyed = false;
         }
       },
       callbackScope: this,
@@ -66,21 +74,27 @@ class SpriteDemo extends Phaser.Scene {
     // const ship: GameObject = this.add.image(0, 0, "ship").setOrigin(0,0)
     // this.matter.world.setBounds(0, 0, this.width, this.height - 100);
 
-    this.ship = new Ship(this, 300,this.height-175)
-    this.matter.world.on('collisionstart', (event, bodyA, bodyB) => {
-      this.ship.destroy()
+    this.ship = new Ship(this, 300, this.height - 175);
+    this.matter.world.on("collisionstart", (event, bodyA, bodyB) => {
+      this.hitSound.play()
+
+
+      this.ship.destroy();
       // console.log("collide", event, bodyA, bodyB)
       // bodyA.gameObject.setTint(0xff0000);
       // bodyB.gameObject.setTint(0x00ff00);
     });
 
-   // this.ship = new Ship(this, 100,0)
-    this.enemy = new Enemy(this, 100,0)
+    // this.ship = new Ship(this, 100,0)
+    this.enemy = new Enemy(this, 100, 0);
 
     this.input.keyboard.on("keyup_D", () => {
-      this.lasers.push(new Laser(this, this.ship.x,this.ship.y-this.ship.height))
+      this.fireSound.play();
+      this.lasers.push(
+        new Laser(this, this.ship.x, this.ship.y - this.ship.height)
+      );
 
-      console.log("SpriteDemo", "key d", )
+      console.log("SpriteDemo", "key d");
     });
 
     // this.ship.comp.setCollidesWith(this.enemy.comp)
@@ -89,41 +103,43 @@ class SpriteDemo extends Phaser.Scene {
     // ship.setCollideWorldBounds(true);
   }
   update(timestep, delta) {
-    const { leftKey, rightKey,upKey, downKey } = this.cursors;
-    this.ship.move()
-    this.enemy.move()
+
+    this.starfield.tilePositionY +=  2
+
+    const { leftKey, rightKey, upKey, downKey } = this.cursors;
+
+    this.ship.move();
+    this.enemy.move();
     this.lasers.forEach(laser => {
-      laser.move()
+      laser.move();
       if (laser.y < 0) {
-        this.matter.world.remove(laser.comp.body)
-        this.children.remove(laser.comp)
-
+        this.matter.world.remove(laser.comp.body);
+        this.children.remove(laser.comp);
       }
-    })
+    });
 
-    if (this.enemy.y > this.height-75) {
+    if (this.enemy.y > this.height - 75) {
       // console.log("SpriteDemo", "update", this.anims)
 
-      this.matter.world.remove(this.enemy.comp.body)
-      this.children.remove(this.enemy.comp)
-      this.enemyDestroyed = true
+      this.matter.world.remove(this.enemy.comp.body);
+      this.children.remove(this.enemy.comp);
+      this.enemyDestroyed = true;
     }
     // console.log("SpriteDemo", "update", this.ship.comp.y)
 
-     // console.log("Scene1", "update", this.ship.x)
+    // console.log("Scene1", "update", this.ship.x)
     if (leftKey.isDown) {
-      this.ship.dir.x = -1
+      this.ship.dir.x = -1;
       // console.log("Scene1", "is down");
     } else if (rightKey.isDown) {
       // console.log("Scene1", "is up ");
-      this.ship.dir.x = 1
-    }
-    else if (upKey.isDown) {
+      this.ship.dir.x = 1;
+    } else if (upKey.isDown) {
       // console.log("Scene1", "is up ");
-      this.ship.dir.y = -1
+      this.ship.dir.y = -1;
     } else if (downKey.isDown) {
       // console.log("Scene1", "is up ");
-      this.ship.dir.y = 1
+      this.ship.dir.y = 1;
     }
   }
 }

@@ -97,8 +97,8 @@ class Ship {
   move() {
     let w = Phaser.Math.Wrap(this.comp.x, 0, this.WIDTH);
     // this.comp.thrustRight(1)
-    this.comp.setX(w + this.dir.x * 3);
-    this.comp.setY(this.comp.y + this.dir.y * 3);
+    this.comp.setX(w + this.dir.x * 5);
+    this.comp.setY(this.comp.y + this.dir.y * 5);
   }
 }
 

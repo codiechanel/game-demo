@@ -23749,7 +23749,7 @@ declare namespace Phaser {
              * @param config [description]
              * @param xhrSettings [description]
              */
-            audio(key: string, urls: string | string[], config: object, xhrSettings?: Phaser.Loader.XHRSettings): Phaser.Loader.LoaderPlugin;
+            audio(key: string, urls: string | string[], config?: object, xhrSettings?: Phaser.Loader.XHRSettings): Phaser.Loader.LoaderPlugin;
 
             /**
              * Adds an Audio Sprite file to the current load queue.
