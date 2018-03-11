@@ -1,4 +1,3 @@
-///<reference path="../../types/phaser.d.ts"/>
 import MatterImage = Phaser.Physics.Matter.MatterImage;
 
 class Laser {
@@ -33,7 +32,8 @@ class Laser {
   move() {
    // let w = Phaser.Math.Wrap(this.comp.y, 0, this.HEIGHT)
     // this.comp.setY(w)
-    this.comp.setY(this.comp.y + this.dir.y * 5)
+    // this.comp.setY(this.comp.y + this.dir.y * 5)
+    this.comp.setVelocityY(this.dir.y * 5)
 
   }
 

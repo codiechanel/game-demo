@@ -1,4 +1,3 @@
-///<reference path="../../types/phaser.d.ts"/>
 import MatterImage = Phaser.Physics.Matter.MatterImage;
 import MatterSprite = Phaser.Physics.Matter.MatterSprite;
 import GameObject = Phaser.GameObjects.GameObject;
@@ -18,45 +17,21 @@ class Ship {
 
     // this.comp = scene.add.image(x, y, "ship").setOrigin(0,0)
     // this.comp = scene.matter.add.image(x, y, "ship").setOrigin(0,0)
+
     this.comp = scene.matter.add
       .sprite(x, y, "playerShip", "playerShip1_blue.png")
         .setName("player")
       .setOrigin(0, 0)
 
 
-    const frameNames = scene.anims.generateFrameNames("playerShip", {
-      start: 1,
-      end: 3,
-      zeroPad: 1,
-      prefix: "playerShip1_damage",
-      suffix: ".png"
-    });
-    const frameNamesIdle = scene.anims.generateFrameNames("playerShip", {
-      start: "",
-      end: "",
-      // zeroPad: 0,
-      prefix: "playerShip1_blue",
-      suffix: ".png"
-    });
-    console.log("Ship", "frameNamesIdle", frameNamesIdle);
-    // scene.anims.create({
-    //   key: "shipDestroyed",
-    //   frames: frameNames,
-    //   frameRate: 16,
-    //   repeat: -1
-    // });
-    // scene.anims.create({
-    //   key: "shipIdle",
-    //   frames: frameNamesIdle,
-    //   frameRate: 16,
-    //   // hideOnComplete: true,
-    //   repeat: 1
-    //   // repeat: -1
-    // });
+
+    console.log("Ship", "frameNamesIdle", this.comp.body.velocity);
+
 
     this.comp.setIgnoreGravity(true);
     this.comp.setBounce(true);
     this.comp.setFixedRotation();
+
 
     // this.comp.setVelocityY(30)
 
@@ -89,8 +64,12 @@ class Ship {
   move() {
     let w = Phaser.Math.Wrap(this.comp.x, 0, this.WIDTH);
     // this.comp.thrustRight(1)
-    this.comp.setX(w + this.dir.x * 5);
-    this.comp.setY(this.comp.y + this.dir.y * 5);
+    this.comp.setX(w);
+
+    // this.comp.setY(this.comp.y + this.dir.y * 5);
+    this.comp.setVelocityX(this.dir.x * 5)
+    this.comp.setVelocityY(this.dir.y * 5)
+    // console.log("Ship", "frameNamesIdle", this.comp.body.velocity);
   }
 }
 

@@ -1,5 +1,3 @@
-///<reference path="../../types/phaser.d.ts"/>
-
 import GameObject = Phaser.GameObjects.GameObject;
 import Ship from "./Ship";
 import Enemy from "./Enemy";
@@ -27,18 +25,17 @@ class SpriteDemo extends Phaser.Scene {
   // [cursors: string]: any;
 
   preload() {
-
     this.load.audio("hit", "assets/sfx_zap.ogg");
     this.load.audio("fire", "assets/sfx_laser1.ogg");
     this.load.atlas("playerShip", "assets/ship.png", "assets/ship.json");
-
     this.load.image("starfield", "assets/blue.png");
     this.load.image("laser", "assets/laserBlue02.png");
     this.load.image("enemy", "assets/enemyBlue1.png");
     this.load.image("ship", "assets/playerShip1_blue.png");
+    // this.load.image("beanstalk", "assets/beanstalk2.svg");
+    this.load.svg("beanstalk", "assets/bird.svg");
   }
   create() {
-
     // setting Matter world bounds
     // this.matter.world.setBounds(0, -200, game.config.width, game.config.height + 200);
     const frameNames = this.anims.generateFrameNames("playerShip", {
@@ -66,7 +63,9 @@ class SpriteDemo extends Phaser.Scene {
       key: "shipDestroyed",
       frames: frameNames,
       frameRate: 16,
-      repeat: -1
+      yoyo: true,
+      repeat: 1
+      // repeat: -1
     });
     this.anims.create({
       key: "shipIdle",
@@ -85,10 +84,34 @@ class SpriteDemo extends Phaser.Scene {
       // repeat: -1
     });
 
-    this.starfield = this.add.tileSprite(0, 0, 800, 400, 'starfield')
-    this.starfield.setOrigin(0,0)
-    this.fireSound = this.sound.add('fire');
-    this.hitSound = this.sound.add('hit');
+
+    this.starfield = this.add.tileSprite(0, 0, 800, 400, "starfield");
+    this.starfield.setOrigin(0, 0);
+
+    // this.add.image(0, 0, "beanstalk").setOrigin(0, 0);
+    var config8 = {
+      key: 'beanstalk',
+      x: 0,
+      y: -600,
+      scale: { x: 4.5,  y: 4.5 }
+    };
+
+    let img: any  = this.make.image(config8)
+
+        img.setOrigin(0,0)
+    console.log("SpriteDemo", "img", img)
+
+    // this.make.graphics()
+
+    console.log("SpriteDemo", "create", this)
+
+    let scoreText = this.add.text(10, 10, "Score", {
+      font: "34px Arial",
+      fill: "#fff"
+    });
+
+    this.fireSound = this.sound.add("fire");
+    this.hitSound = this.sound.add("hit");
     this.height = this.sys.canvas.height;
     this.width = this.sys.canvas.width;
     this.cursors = this.input.keyboard.addKeys({
@@ -121,9 +144,9 @@ class SpriteDemo extends Phaser.Scene {
 
     this.ship = new Ship(this, 300, this.height - 175);
     this.matter.world.on("collisionstart", (event, bodyA, bodyB) => {
-      this.hitSound.play()
-      let nameA = bodyA.gameObject.name
-      let nameB = bodyB.gameObject.name
+      this.hitSound.play();
+      let nameA = bodyA.gameObject.name;
+      let nameB = bodyB.gameObject.name;
       if (nameA === "player" || nameB === "player") {
         this.ship.destroy();
       }
@@ -135,14 +158,14 @@ class SpriteDemo extends Phaser.Scene {
       }
       if (nameA === "laser") {
         this.matter.world.remove(bodyA);
-        this.children.remove(bodyA.gameObject);
-      }
-      else if (nameB === "laser") {
+        // bodyA.gameObject.destroy();
+         this.children.remove(bodyA.gameObject);
+      } else if (nameB === "laser") {
         this.matter.world.remove(bodyB);
+        // bodyB.gameObject.destroy();
         this.children.remove(bodyB.gameObject);
-
       }
-      console.log("SpriteDemo", bodyA.gameObject.name,bodyB )
+      console.log("SpriteDemo", bodyA.gameObject.name, bodyB);
 
       // console.log("collide", event, bodyA, bodyB)
       // bodyA.gameObject.setTint(0xff0000);
@@ -167,8 +190,7 @@ class SpriteDemo extends Phaser.Scene {
     // ship.setCollideWorldBounds(true);
   }
   update(timestep, delta) {
-
-    this.starfield.tilePositionY +=  2
+    this.starfield.tilePositionY += 2;
 
     const { leftKey, rightKey, upKey, downKey } = this.cursors;
 
@@ -185,10 +207,6 @@ class SpriteDemo extends Phaser.Scene {
     if (this.enemy.y > this.height + 75) {
       this.enemyDestroyed = true;
       this.enemy.destroy();
-
-      // this.matter.world.remove(this.enemy.comp.body);
-      // this.children.remove(this.enemy.comp);
-
     }
     if (leftKey.isDown) {
       this.ship.dir.x = -1;

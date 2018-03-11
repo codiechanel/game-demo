@@ -1,4 +1,4 @@
-///<reference path="../../types/phaser.d.ts"/>
+
 import * as React from "react";
 
 // import Game = Phaser.Game;
@@ -20,8 +20,8 @@ class PhaserSpaceInvaders extends React.Component {
         default: "matter",
         matter: {
           enableSleeping: true,
-          gravity: { y: .5, x: 0 }
-          // gravity: { y: 0, x: 0 }
+          // gravity: { y: .5, x: 0 }
+          gravity: { y: 0, x: 0 }
         }
         // arcade: { gravity: { y: 200 } }
       },
