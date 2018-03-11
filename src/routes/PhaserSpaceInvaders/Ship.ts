@@ -1,24 +1,27 @@
 ///<reference path="../../types/phaser.d.ts"/>
 import MatterImage = Phaser.Physics.Matter.MatterImage;
 import MatterSprite = Phaser.Physics.Matter.MatterSprite;
+import GameObject = Phaser.GameObjects.GameObject;
 
 class Ship {
   // public dir = 0
   public dir = new Phaser.Geom.Point(0, 0);
   // private readonly comp: Phaser.GameObjects.Image;
   private readonly WIDTH: number;
-  // public comp: MatterSprite;
-  public comp: any;
+  public comp: MatterSprite | any;
+  // public comp: any;
   // private scene: Phaser.Scene;
   private scene: any;
   constructor(scene, x, y) {
     this.scene = scene;
     this.WIDTH = scene.sys.canvas.width;
+
     // this.comp = scene.add.image(x, y, "ship").setOrigin(0,0)
     // this.comp = scene.matter.add.image(x, y, "ship").setOrigin(0,0)
     this.comp = scene.matter.add
       .sprite(x, y, "playerShip", "playerShip1_blue.png")
       .setOrigin(0, 0);
+
     const frameNames = scene.anims.generateFrameNames("playerShip", {
       start: 1,
       end: 3,
@@ -33,7 +36,7 @@ class Ship {
       prefix: "playerShip1_blue",
       suffix: ".png"
     });
-    console.log("Ship", "frameNamesIdle", frameNamesIdle)
+    console.log("Ship", "frameNamesIdle", frameNamesIdle);
     scene.anims.create({
       key: "shipDestroyed",
       frames: frameNames,
@@ -44,6 +47,8 @@ class Ship {
       key: "shipIdle",
       frames: frameNamesIdle,
       frameRate: 16,
+      // hideOnComplete: true,
+      repeat: 1
       // repeat: -1
     });
 
@@ -55,9 +60,11 @@ class Ship {
 
     // this.comp.setCollidesWith("enemy")
 
-    console.log("Enemy", "constructor");
+    console.log("Laser", "constructor");
   }
-
+  get height() {
+    return this.comp.height;
+  }
   get x() {
     return this.comp.x;
   }

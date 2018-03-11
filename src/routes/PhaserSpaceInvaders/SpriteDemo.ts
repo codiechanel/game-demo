@@ -4,6 +4,7 @@ import GameObject = Phaser.GameObjects.GameObject;
 import Ship from "./Ship";
 import Enemy from "./Enemy";
 import TimerEvent = Phaser.Time.TimerEvent;
+import Laser from "./Laser";
 
 class SpriteDemo extends Phaser.Scene {
   private ship: Ship;
@@ -12,17 +13,20 @@ class SpriteDemo extends Phaser.Scene {
   enemyDestroyed = false
   private height: number;
   private width: number;
+  lasers = []
+  private laser: Laser;
   // private matter: any;
   /**
    * index signature
    * what the hell is this?
    */
-  [x: string]: any;
+  [dummy: string]: any;
   // [cursors: string]: any;
 
   preload() {
     this.load.atlas("playerShip", "assets/ship.png", "assets/ship.json");
 
+    this.load.image("laser", "assets/laserBlue02.png");
     this.load.image("enemy", "assets/enemyBlue1.png");
     this.load.image("ship", "assets/playerShip1_blue.png");
   }
@@ -61,7 +65,8 @@ class SpriteDemo extends Phaser.Scene {
     // });
     // const ship: GameObject = this.add.image(0, 0, "ship").setOrigin(0,0)
     // this.matter.world.setBounds(0, 0, this.width, this.height - 100);
-    this.ship = new Ship(this, 100,this.height-175)
+
+    this.ship = new Ship(this, 300,this.height-175)
     this.matter.world.on('collisionstart', (event, bodyA, bodyB) => {
       this.ship.destroy()
       // console.log("collide", event, bodyA, bodyB)
@@ -72,6 +77,12 @@ class SpriteDemo extends Phaser.Scene {
    // this.ship = new Ship(this, 100,0)
     this.enemy = new Enemy(this, 100,0)
 
+    this.input.keyboard.on("keyup_D", () => {
+      this.lasers.push(new Laser(this, this.ship.x,this.ship.y-this.ship.height))
+
+      console.log("SpriteDemo", "key d", )
+    });
+
     // this.ship.comp.setCollidesWith(this.enemy.comp)
     // this.enemy.comp.setCollidesWith(this.ship.comp)
     // ship.setVelocity(50, 50);
@@ -81,6 +92,15 @@ class SpriteDemo extends Phaser.Scene {
     const { leftKey, rightKey,upKey, downKey } = this.cursors;
     this.ship.move()
     this.enemy.move()
+    this.lasers.forEach(laser => {
+      laser.move()
+      if (laser.y < 0) {
+        this.matter.world.remove(laser.comp.body)
+        this.children.remove(laser.comp)
+
+      }
+    })
+
     if (this.enemy.y > this.height-75) {
       // console.log("SpriteDemo", "update", this.anims)
 
