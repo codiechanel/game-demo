@@ -20,7 +20,9 @@ class Ship {
     // this.comp = scene.matter.add.image(x, y, "ship").setOrigin(0,0)
     this.comp = scene.matter.add
       .sprite(x, y, "playerShip", "playerShip1_blue.png")
-      .setOrigin(0, 0);
+        .setName("player")
+      .setOrigin(0, 0)
+
 
     const frameNames = scene.anims.generateFrameNames("playerShip", {
       start: 1,
@@ -37,20 +39,20 @@ class Ship {
       suffix: ".png"
     });
     console.log("Ship", "frameNamesIdle", frameNamesIdle);
-    scene.anims.create({
-      key: "shipDestroyed",
-      frames: frameNames,
-      frameRate: 16,
-      repeat: -1
-    });
-    scene.anims.create({
-      key: "shipIdle",
-      frames: frameNamesIdle,
-      frameRate: 16,
-      // hideOnComplete: true,
-      repeat: 1
-      // repeat: -1
-    });
+    // scene.anims.create({
+    //   key: "shipDestroyed",
+    //   frames: frameNames,
+    //   frameRate: 16,
+    //   repeat: -1
+    // });
+    // scene.anims.create({
+    //   key: "shipIdle",
+    //   frames: frameNamesIdle,
+    //   frameRate: 16,
+    //   // hideOnComplete: true,
+    //   repeat: 1
+    //   // repeat: -1
+    // });
 
     this.comp.setIgnoreGravity(true);
     this.comp.setBounce(true);
@@ -83,16 +85,6 @@ class Ship {
       // playerShip
       // this.comp.anims.clear()
     }, 500);
-    // this.comp.anims.stop()
-
-    // this.scene.anims.play('shipDestroyed', )
-    // this.comp.visible = false
-    //  this.comp.destroy()
-    //   this.comp.kill()
-    //this.matter.world.remove(bodiesUnderPointer[0])
-
-    // this.scene.physics.
-    //this.comp.body.
   }
   move() {
     let w = Phaser.Math.Wrap(this.comp.x, 0, this.WIDTH);

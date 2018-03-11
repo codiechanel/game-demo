@@ -2,13 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cb27b4b6-e7ad-4fda-bb26-030350b4dd3c" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/public/assets/blue.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/sfx_laser1.ogg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/sfx_zap.ogg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/ship.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/ship.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/ship.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/ship.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/PhaserSpaceInvaders/Enemy.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/PhaserSpaceInvaders/Enemy.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/PhaserSpaceInvaders/Laser.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/PhaserSpaceInvaders/Laser.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/PhaserSpaceInvaders/Ship.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/PhaserSpaceInvaders/Ship.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/PhaserSpaceInvaders/SpriteDemo.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/PhaserSpaceInvaders/SpriteDemo.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/types/phaser.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/phaser.d.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -37,17 +37,8 @@
       <file leaf-file-name="SpriteDemo.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/routes/PhaserSpaceInvaders/SpriteDemo.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="43" column="32" selection-start-line="43" selection-start-column="32" selection-end-line="43" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="phaser.d.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/types/phaser.d.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-185">
-              <caret line="17871" column="25" selection-start-line="17871" selection-start-column="12" selection-end-line="17871" selection-end-column="25" />
+            <state relative-caret-position="228">
+              <caret line="141" column="34" selection-start-line="141" selection-start-column="34" selection-end-line="141" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -55,8 +46,8 @@
       <file leaf-file-name="Enemy.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/routes/PhaserSpaceInvaders/Enemy.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="123">
-              <caret line="22" selection-start-line="22" selection-end-line="24" selection-end-column="3" />
+            <state relative-caret-position="217">
+              <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -64,8 +55,8 @@
       <file leaf-file-name="Laser.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/routes/PhaserSpaceInvaders/Laser.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-10">
-              <caret line="31" column="10" lean-forward="true" selection-start-line="31" selection-start-column="10" selection-end-line="31" selection-end-column="10" />
+            <state relative-caret-position="198">
+              <caret line="15" column="28" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -73,17 +64,8 @@
       <file leaf-file-name="Ship.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/routes/PhaserSpaceInvaders/Ship.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1767">
-              <caret line="105" lean-forward="true" selection-start-line="105" selection-end-line="105" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ship.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/assets/ship.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+            <state relative-caret-position="114">
+              <caret line="75" column="2" selection-start-line="75" selection-start-column="2" selection-end-line="87" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -134,13 +116,14 @@
       <find>upda</find>
       <find>player</find>
       <find>mouse</find>
-      <find>ship</find>
       <find>collis</find>
       <find>collisi</find>
       <find>config</find>
       <find>audio</find>
       <find>settile</find>
       <find>tilePositionY</find>
+      <find>playerShip</find>
+      <find>ship</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -180,11 +163,11 @@
         <option value="$PROJECT_DIR$/src/routes/PhaserDemo/index.tsx" />
         <option value="$PROJECT_DIR$/src/routes/PhaserDemo2/SpriteDemo.ts" />
         <option value="$PROJECT_DIR$/src/App.tsx" />
-        <option value="$PROJECT_DIR$/src/routes/PhaserSpaceInvaders/Enemy.ts" />
         <option value="$PROJECT_DIR$/src/routes/PhaserSpaceInvaders/index.tsx" />
-        <option value="$PROJECT_DIR$/src/routes/PhaserSpaceInvaders/Laser.ts" />
         <option value="$PROJECT_DIR$/src/types/phaser.d.ts" />
         <option value="$PROJECT_DIR$/src/routes/PhaserSpaceInvaders/Ship.ts" />
+        <option value="$PROJECT_DIR$/src/routes/PhaserSpaceInvaders/Enemy.ts" />
+        <option value="$PROJECT_DIR$/src/routes/PhaserSpaceInvaders/Laser.ts" />
         <option value="$PROJECT_DIR$/src/routes/PhaserSpaceInvaders/SpriteDemo.ts" />
       </list>
     </option>
@@ -394,7 +377,7 @@
       <workItem from="1520675335285" duration="4623000" />
       <workItem from="1520680107149" duration="700000" />
       <workItem from="1520680986576" duration="4906000" />
-      <workItem from="1520686131593" duration="31969000" />
+      <workItem from="1520686131593" duration="36601000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1520491856072</created>
@@ -501,23 +484,30 @@
       <option name="project" value="LOCAL" />
       <updated>1520739309370</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="init">
+      <created>1520744805609</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1520744805610</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="111826000" />
+    <option name="totallyTimeSpent" value="116458000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1111" height="591" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TypeScript" order="7" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.8722359" visible="true" weight="0.28372094" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.8707124" visible="true" weight="0.28372094" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info id="npm" order="2" sideWeight="0.12776412" side_tool="true" visible="true" weight="0.28372094" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.10549451" />
+      <window_info id="npm" order="2" sideWeight="0.1292876" side_tool="true" visible="true" weight="0.28372094" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.16703297" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.18021978" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -844,31 +834,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/routes/PhaserSpaceInvaders/Enemy.ts">
+    <entry file="file://$PROJECT_DIR$/src/types/phaser.d.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="22" selection-start-line="22" selection-end-line="24" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/routes/PhaserSpaceInvaders/Laser.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-10">
-          <caret line="31" column="10" lean-forward="true" selection-start-line="31" selection-start-column="10" selection-end-line="31" selection-end-column="10" />
+        <state relative-caret-position="-185">
+          <caret line="17871" column="25" selection-start-line="17871" selection-start-column="12" selection-end-line="17871" selection-end-column="25" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/routes/PhaserSpaceInvaders/Ship.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1767">
-          <caret line="105" lean-forward="true" selection-start-line="105" selection-end-line="105" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/types/phaser.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-185">
-          <caret line="17871" column="25" selection-start-line="17871" selection-start-column="12" selection-end-line="17871" selection-end-column="25" />
+        <state relative-caret-position="114">
+          <caret line="75" column="2" selection-start-line="75" selection-start-column="2" selection-end-line="87" selection-end-column="3" />
         </state>
       </provider>
     </entry>
@@ -879,10 +855,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/routes/PhaserSpaceInvaders/Enemy.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/routes/PhaserSpaceInvaders/Laser.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="15" column="28" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/routes/PhaserSpaceInvaders/SpriteDemo.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="43" column="32" selection-start-line="43" selection-start-column="32" selection-end-line="43" selection-end-column="32" />
+        <state relative-caret-position="228">
+          <caret line="141" column="34" selection-start-line="141" selection-start-column="34" selection-end-line="141" selection-end-column="34" />
         </state>
       </provider>
     </entry>

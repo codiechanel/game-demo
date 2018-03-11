@@ -13,6 +13,7 @@ class Laser {
     this.WIDTH = scene.sys.canvas.width
     // this.comp = scene.add.image(x, y, "enemy").setOrigin(0,0)
     this.comp = scene.matter.add.image(x, y, "laser")
+    this.comp.setName("laser")
     this.comp.setOrigin(0,0)
     // this.comp.setVelocityY(1)
     // this.comp.setBounce(true)

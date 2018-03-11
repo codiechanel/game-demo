@@ -38,8 +38,53 @@ class SpriteDemo extends Phaser.Scene {
     this.load.image("ship", "assets/playerShip1_blue.png");
   }
   create() {
+
     // setting Matter world bounds
     // this.matter.world.setBounds(0, -200, game.config.width, game.config.height + 200);
+    const frameNames = this.anims.generateFrameNames("playerShip", {
+      start: 1,
+      end: 3,
+      zeroPad: 1,
+      prefix: "playerShip1_damage",
+      suffix: ".png"
+    });
+    const frameNamesIdle = this.anims.generateFrameNames("playerShip", {
+      start: "",
+      end: "",
+      // zeroPad: 0,
+      prefix: "playerShip1_blue",
+      suffix: ".png"
+    });
+    const frameNamesEnemyIdle = this.anims.generateFrameNames("playerShip", {
+      start: "",
+      end: "",
+      // zeroPad: 0,
+      prefix: "enemyBlue1",
+      suffix: ".png"
+    });
+    this.anims.create({
+      key: "shipDestroyed",
+      frames: frameNames,
+      frameRate: 16,
+      repeat: -1
+    });
+    this.anims.create({
+      key: "shipIdle",
+      frames: frameNamesIdle,
+      frameRate: 16,
+      // hideOnComplete: true,
+      repeat: 1
+      // repeat: -1
+    });
+    this.anims.create({
+      key: "enemyIdle",
+      frames: frameNamesEnemyIdle,
+      frameRate: 16,
+      // hideOnComplete: true,
+      repeat: 1
+      // repeat: -1
+    });
+
     this.starfield = this.add.tileSprite(0, 0, 800, 400, 'starfield')
     this.starfield.setOrigin(0,0)
     this.fireSound = this.sound.add('fire');
@@ -77,9 +122,28 @@ class SpriteDemo extends Phaser.Scene {
     this.ship = new Ship(this, 300, this.height - 175);
     this.matter.world.on("collisionstart", (event, bodyA, bodyB) => {
       this.hitSound.play()
+      let nameA = bodyA.gameObject.name
+      let nameB = bodyB.gameObject.name
+      if (nameA === "player" || nameB === "player") {
+        this.ship.destroy();
+      }
+      if (nameA === "enemy" || nameB === "enemy") {
+        // this.matter.world.remove(this.enemy.comp.body);
+        this.enemyDestroyed = true;
+        this.enemy.destroy();
+        // this.children.remove(this.enemy.comp);
+      }
+      if (nameA === "laser") {
+        this.matter.world.remove(bodyA);
+        this.children.remove(bodyA.gameObject);
+      }
+      else if (nameB === "laser") {
+        this.matter.world.remove(bodyB);
+        this.children.remove(bodyB.gameObject);
 
+      }
+      console.log("SpriteDemo", bodyA.gameObject.name,bodyB )
 
-      this.ship.destroy();
       // console.log("collide", event, bodyA, bodyB)
       // bodyA.gameObject.setTint(0xff0000);
       // bodyB.gameObject.setTint(0x00ff00);
@@ -118,16 +182,14 @@ class SpriteDemo extends Phaser.Scene {
       }
     });
 
-    if (this.enemy.y > this.height - 75) {
-      // console.log("SpriteDemo", "update", this.anims)
-
-      this.matter.world.remove(this.enemy.comp.body);
-      this.children.remove(this.enemy.comp);
+    if (this.enemy.y > this.height + 75) {
       this.enemyDestroyed = true;
-    }
-    // console.log("SpriteDemo", "update", this.ship.comp.y)
+      this.enemy.destroy();
 
-    // console.log("Scene1", "update", this.ship.x)
+      // this.matter.world.remove(this.enemy.comp.body);
+      // this.children.remove(this.enemy.comp);
+
+    }
     if (leftKey.isDown) {
       this.ship.dir.x = -1;
       // console.log("Scene1", "is down");

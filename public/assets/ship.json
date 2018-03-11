@@ -1,8 +1,152 @@
 {"frames": [
 
 {
+	"filename": "enemyBlack1.png",
+	"frame": {"x":310,"y":87,"w":93,"h":84},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":93,"h":84},
+	"sourceSize": {"w":93,"h":84}
+},
+{
+	"filename": "enemyBlack2.png",
+	"frame": {"x":1,"y":199,"w":104,"h":84},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":104,"h":84},
+	"sourceSize": {"w":104,"h":84}
+},
+{
+	"filename": "enemyBlack3.png",
+	"frame": {"x":123,"y":1,"w":103,"h":84},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":103,"h":84},
+	"sourceSize": {"w":103,"h":84}
+},
+{
+	"filename": "enemyBlack4.png",
+	"frame": {"x":422,"y":1,"w":82,"h":84},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":82,"h":84},
+	"sourceSize": {"w":82,"h":84}
+},
+{
+	"filename": "enemyBlack5.png",
+	"frame": {"x":228,"y":1,"w":97,"h":84},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":97,"h":84},
+	"sourceSize": {"w":97,"h":84}
+},
+{
+	"filename": "enemyBlue1.png",
+	"frame": {"x":327,"y":1,"w":93,"h":84},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":93,"h":84},
+	"sourceSize": {"w":93,"h":84}
+},
+{
+	"filename": "enemyBlue2.png",
+	"frame": {"x":101,"y":101,"w":104,"h":84},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":104,"h":84},
+	"sourceSize": {"w":104,"h":84}
+},
+{
+	"filename": "enemyBlue3.png",
+	"frame": {"x":107,"y":187,"w":103,"h":84},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":103,"h":84},
+	"sourceSize": {"w":103,"h":84}
+},
+{
+	"filename": "enemyBlue4.png",
+	"frame": {"x":415,"y":249,"w":82,"h":84},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":82,"h":84},
+	"sourceSize": {"w":82,"h":84}
+},
+{
+	"filename": "enemyBlue5.png",
+	"frame": {"x":212,"y":173,"w":97,"h":84},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":97,"h":84},
+	"sourceSize": {"w":97,"h":84}
+},
+{
+	"filename": "meteorBrown_big1.png",
+	"frame": {"x":207,"y":87,"w":101,"h":84},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":101,"h":84},
+	"sourceSize": {"w":101,"h":84}
+},
+{
+	"filename": "meteorBrown_big2.png",
+	"frame": {"x":1,"y":1,"w":120,"h":98},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":120,"h":98},
+	"sourceSize": {"w":120,"h":98}
+},
+{
+	"filename": "meteorBrown_big3.png",
+	"frame": {"x":412,"y":165,"w":89,"h":82},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":89,"h":82},
+	"sourceSize": {"w":89,"h":82}
+},
+{
+	"filename": "meteorBrown_big4.png",
+	"frame": {"x":1,"y":101,"w":98,"h":96},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":98,"h":96},
+	"sourceSize": {"w":98,"h":96}
+},
+{
+	"filename": "meteorBrown_med1.png",
+	"frame": {"x":1,"y":285,"w":43,"h":43},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":43,"h":43},
+	"sourceSize": {"w":43,"h":43}
+},
+{
+	"filename": "meteorBrown_med3.png",
+	"frame": {"x":46,"y":285,"w":45,"h":40},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":45,"h":40},
+	"sourceSize": {"w":45,"h":40}
+},
+{
+	"filename": "meteorBrown_small1.png",
+	"frame": {"x":93,"y":285,"w":28,"h":28},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":28,"h":28},
+	"sourceSize": {"w":28,"h":28}
+},
+{
+	"filename": "meteorBrown_small2.png",
+	"frame": {"x":123,"y":273,"w":29,"h":26},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":29,"h":26},
+	"sourceSize": {"w":29,"h":26}
+},
+{
 	"filename": "playerShip1_blue.png",
-	"frame": {"x":305,"y":1,"w":99,"h":75},
+	"frame": {"x":314,"y":251,"w":99,"h":75},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":99,"h":75},
@@ -10,7 +154,7 @@
 },
 {
 	"filename": "playerShip1_damage1.png",
-	"frame": {"x":103,"y":1,"w":99,"h":76},
+	"frame": {"x":311,"y":173,"w":99,"h":76},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":99,"h":76},
@@ -18,7 +162,7 @@
 },
 {
 	"filename": "playerShip1_damage2.png",
-	"frame": {"x":204,"y":1,"w":99,"h":76},
+	"frame": {"x":405,"y":87,"w":99,"h":76},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":99,"h":76},
@@ -26,7 +170,7 @@
 },
 {
 	"filename": "playerShip1_damage3.png",
-	"frame": {"x":1,"y":1,"w":100,"h":76},
+	"frame": {"x":212,"y":259,"w":100,"h":76},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":100,"h":76},
@@ -37,8 +181,8 @@
 	"version": "1.0",
 	"image": "ship.png",
 	"format": "RGBA8888",
-	"size": {"w":405,"h":78},
+	"size": {"w":505,"h":336},
 	"scale": "1",
-	"smartupdate": "$TexturePacker:SmartUpdate:70d62c7a8cf63f6f682e9eaf01efc254:4380bae4dd5bb2415e89eae1107d5fe8:25d6acd8d4906c9ff490804d476da0a8$"
+	"smartupdate": "$TexturePacker:SmartUpdate:2f72a073a574cd688a79a4c945622123:97de6e273dabbe3e5abf7523bee5012b:25d6acd8d4906c9ff490804d476da0a8$"
 }
 }
