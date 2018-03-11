@@ -1,0 +1,44 @@
+{"frames": [
+
+{
+	"filename": "playerShip1_blue.png",
+	"frame": {"x":305,"y":1,"w":99,"h":75},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":99,"h":75},
+	"sourceSize": {"w":99,"h":75}
+},
+{
+	"filename": "playerShip1_damage1.png",
+	"frame": {"x":103,"y":1,"w":99,"h":76},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":99,"h":76},
+	"sourceSize": {"w":99,"h":76}
+},
+{
+	"filename": "playerShip1_damage2.png",
+	"frame": {"x":204,"y":1,"w":99,"h":76},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":99,"h":76},
+	"sourceSize": {"w":99,"h":76}
+},
+{
+	"filename": "playerShip1_damage3.png",
+	"frame": {"x":1,"y":1,"w":100,"h":76},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":100,"h":76},
+	"sourceSize": {"w":100,"h":76}
+}],
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "ship.png",
+	"format": "RGBA8888",
+	"size": {"w":405,"h":78},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:70d62c7a8cf63f6f682e9eaf01efc254:4380bae4dd5bb2415e89eae1107d5fe8:25d6acd8d4906c9ff490804d476da0a8$"
+}
+}

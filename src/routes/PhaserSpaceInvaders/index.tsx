@@ -7,7 +7,7 @@ import SpriteDemo from "./SpriteDemo";
 class PhaserSpaceInvaders extends React.Component {
   private game: Phaser.Game;
   componentDidMount() {
-    let config =  {
+    let config = {
       type: Phaser.CANVAS,
       parent: "content",
       /**
@@ -16,27 +16,29 @@ class PhaserSpaceInvaders extends React.Component {
       // pixelArt: true,
       width: 800,
       height: 400,
-      physics:    { default: "matter",
+      physics: {
+        default: "matter",
+        matter: {
+          enableSleeping: true,
+          gravity: { y: .5, x: 0 }
+          // gravity: { y: 0, x: 0 }
+        }
         // arcade: { gravity: { y: 200 } }
       },
       // scene: [Scene1]
-       scene: [SpriteDemo]
+      scene: [SpriteDemo]
     };
-    this.game = new Phaser.Game(config)
-    console.log("PhaserSpaceInvaders", "componentDidMount", this.game)
+    this.game = new Phaser.Game(config);
+    console.log("PhaserSpaceInvaders", "componentDidMount", this.game);
   }
   render() {
     return (
-
-        <div className="App">
-          <p className="App-intro">
-            To get ,  <code>src/App.tsx</code> and save to reload.
-          </p>
-          <div id="content" >
-
-          </div>
-        </div>
-
+      <div className="App">
+        <p className="App-intro">
+          To get , <code>src/App.tsx</code> and save to reload.
+        </p>
+        <div id="content" />
+      </div>
     );
   }
 }
